@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Profile</title>
+    <%- include("partials/head") %>
+</head>
+
+<body>
+    <div class="container p-4">
+        <div class="row">
+            <div class="col-md4 offset-md4">
+                <div class="card animate__animated animate__backInDown">
+                    <img src="<%= image.path %>" alt="" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <%= image.title %>
+                        </h5>
+                        <p class="card-text">
+                            <%= image.description %>
+                        </p>
+                        <p class="card-text">
+                            <%= format(image.created_at) %>
+                        </p>
+                        <a href="/image/<%= image._id %>/delete" class="btn btn-danger btn-block">Delete Image</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
